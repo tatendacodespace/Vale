@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? - For You, Mam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="question-page">
+    <div class="question-container">
+        <div class="question-content">
+            <h1 class="main-question fade-in-slow">
+                Will you be my valentine?
+            </h1>
+            
+            <div class="button-group fade-in-slow">
+                <button class="answer-btn yes-btn" onclick="handleAnswer(true)">
+                    <span>Yes 💕</span>
+                </button>
+                <button class="answer-btn no-btn" onclick="handleAnswer(false)">
+                    <span>No</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="closing-message" id="closingMessage">
+            <p class="closing-text fade-in">
+                Even if you're far...<br>
+                I'd still choose you, Mam.
+            </p>
+        </div>
+        
+        <div class="final-cta" id="finalCta" style="display: none;">
+            <button class="next-btn" onclick="fadeToPage('thankyou.html')">
+                <span>One more thing... →</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

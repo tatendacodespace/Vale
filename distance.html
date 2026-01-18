@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance - For You, Mam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="distance-page">
+    <div class="distance-container">
+        <div class="map-wrapper">
+            <div class="map-background">
+                <div class="map-lines"></div>
+                <div class="map-lines"></div>
+                <div class="map-lines"></div>
+            </div>
+            
+            <div class="location-dot dot-jhb" id="dotJhb" onclick="revealLocationMessage('jhb')">
+                <div class="dot-pulse"></div>
+                <div class="location-label">Johannesburg</div>
+                <div class="location-subtitle">(Me)</div>
+                <div class="location-message" id="jhbMessage">
+                    <p>💕 This is where I am, thinking of you. 💕</p>
+                </div>
+            </div>
+            
+            <div class="location-dot dot-kzn" id="dotKzn" onclick="revealLocationMessage('kzn')">
+                <div class="dot-pulse"></div>
+                <div class="location-label">KwaZulu-Natal</div>
+                <div class="location-subtitle">(You, Mam)</div>
+                <div class="location-message" id="kznMessage">
+                    <p>💕 This is where you'll be, and I'll still be here for you. 💕</p>
+                </div>
+            </div>
+            
+            <svg class="connection-line" id="connectionLine">
+                <line id="line" stroke="#ff9ec5" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+            </svg>
+        </div>
+
+        <div class="distance-text">
+            <h2 class="distance-title fade-in">Distance is just a number</h2>
+            <p class="distance-poem fade-in">
+                You're heading to KwaZulu-Natal,<br>
+                I'm staying in Johannesburg.<br>
+                Kilometers apart, sure.<br>
+                But effort matters more than distance.
+            </p>
+            <p class="distance-message fade-in">
+                And I'm willing to put in the effort, Ms.
+            </p>
+        </div>
+
+        <div class="distance-cta">
+            <button class="question-btn" onclick="fadeToPage('memories.html')">
+                <span>Continue →</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

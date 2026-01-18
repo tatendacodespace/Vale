@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story - For You, Mam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="story-page">
+    <div class="story-container">
+        <section class="story-section" data-section="1">
+            <div class="story-content">
+                <div class="story-icon clickable-icon" onclick="revealMessage(1)">🌼</div>
+                <h2 class="story-title">I ran and picked that flower</h2>
+                <p class="story-text">Because I wanted to give you something beautiful, Mam.</p>
+                <div class="hidden-message" id="message1">
+                    <p>💕 I'd run anywhere for you, Ms. 💕</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" data-section="2">
+            <div class="story-content">
+                <div class="story-icon broken-icon clickable-icon" onclick="revealMessage(2)">💔</div>
+                <h2 class="story-title">Then I broke it...</h2>
+                <p class="story-text">By mistake. Oops 😅</p>
+                <div class="broken-pieces">
+                    <span class="piece">🌿</span>
+                    <span class="piece">🌿</span>
+                    <span class="piece">🌿</span>
+                </div>
+                <div class="hidden-message" id="message2">
+                    <p>💕 But I'll always try again for you. 💕</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" data-section="3">
+            <div class="story-content">
+                <div class="story-icon healing-icon clickable-icon" onclick="revealMessage(3)">💐</div>
+                <h2 class="story-title">But I keep saying</h2>
+                <p class="story-text">"I'll make something work"</p>
+                <div class="healing-animation">
+                    <span class="sparkle">✨</span>
+                    <span class="sparkle">✨</span>
+                    <span class="sparkle">✨</span>
+                </div>
+                <p class="story-text final-text">And I mean it, Ms. Even when things don't go perfectly.</p>
+                <div class="hidden-message" id="message3">
+                    <p>💕 Because you're worth every effort, Mam. 💕</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="story-nav">
+            <button class="next-btn" onclick="fadeToPage('distance.html')">
+                <span>Continue →</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

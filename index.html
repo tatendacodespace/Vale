@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Mam 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="landing-page">
+    <div class="floating-hearts"></div>
+    
+    <div class="container">
+        <div class="intro-text">
+            <h1 class="animated-intro">
+                <span class="line">I might've broken</span>
+                <span class="line">the flower</span>
+                <span class="line">I gave you</span>
+            </h1>
+        </div>
+        
+        <div class="cta-section">
+            <p class="subtitle">But let me tell you a story...</p>
+            <button class="next-btn" onclick="fadeToPage('story.html')">
+                <span>Let's go →</span>
+            </button>
+        </div>
+        
+        <!-- Hidden interactive element -->
+        <div class="secret-message" id="secretMessage">
+            <p>💕 You found me! Just like I found you, Mam. 💕</p>
+        </div>
+        
+        <!-- Clickable hint -->
+        <div class="click-hint" onclick="revealSecret()">
+            <span>👆</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <p>No flowers were harmed in the making of this website 🌸</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
