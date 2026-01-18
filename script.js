@@ -16,13 +16,7 @@ function createFloatingHearts() {
     }
 }
 
-// Page transition
-function fadeToPage(url) {
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-        window.location.href = url;
-    }, 500);
-}
+// Page transition - using enhanced version below
 
 // Reveal secret message on landing page
 function revealSecret() {
@@ -160,11 +154,11 @@ function handleAnswer(isYes) {
         if (closingMessage) {
             closingMessage.innerHTML = `
                 <p class="closing-text fade-in" style="font-size: 2rem; color: var(--pink-dark); font-weight: 600;">
-                    Yay! 💕💕💕
+                    Yay! Let's gooo! 💕💕💕
                 </p>
                 <p class="closing-text fade-in" style="margin-top: 2rem;">
                     Even if you're far...<br>
-                    I'd still choose you, Mam.
+                    I'd still choose you, Mam. (No cap 😎)
                 </p>
             `;
         }
@@ -180,13 +174,15 @@ function handleAnswer(isYes) {
     } else {
         // Playful "no" response
         if (noBtn) {
-            noBtn.style.transform = 'translateX(-1000px)';
+            noBtn.style.transform = 'translateX(-1000px) rotate(360deg)';
             noBtn.style.opacity = '0';
             setTimeout(() => {
-                if (noBtn) noBtn.textContent = 'Try again? 😊';
-                if (noBtn) noBtn.style.transform = 'translateX(0)';
-                if (noBtn) noBtn.style.opacity = '1';
-                if (noBtn) noBtn.onclick = () => handleAnswer(true);
+                if (noBtn) {
+                    noBtn.innerHTML = '<span>Nice try 😏 Click me again</span>';
+                    noBtn.style.transform = 'translateX(0) rotate(0deg)';
+                    noBtn.style.opacity = '1';
+                    noBtn.onclick = () => handleAnswer(true);
+                }
             }, 500);
         }
     }
@@ -236,10 +232,12 @@ function createCelebration() {
 function initMemoriesPage() {
     const memoryCards = document.querySelectorAll('.memory-card');
     const revealedMessages = {
-        1: "💕 Every word you say makes my day better. 💕",
-        2: "💕 Time stops when we talk. 💕",
-        3: "💕 Your happiness is my happiness. 💕",
-        4: "💕 I can't wait to make memories with you. 💕"
+        1: "💕 That moment changed everything. I'm so glad you turned back, Mam. (Even though that 'why' almost ended me 😂) 💕",
+        2: "💕 Those walks are my favorite. Just us, talking, getting to know each other. Perfect vibes. 💕",
+        3: "💕 Our little budget date was everything. Just being with you, chatting in the car. I loved it lowkey. 💕",
+        4: "💕 Ice cream and walks with you? That's all I need. Simple moments, big feelings. (You're easy to impress 😏) 💕",
+        5: "💕 You're absolutely stunning, Ms. I can't help but stare. You're beautiful inside and out. (And I'm not the only one who noticed 😅) 💕",
+        6: "💕 You're worth every gym session, Mam. I'll be ready to protect what matters most. (Time to get intimidating 💪) 💕"
     };
     
     memoryCards.forEach(card => {
@@ -268,8 +266,15 @@ function initThankYouPage() {
 document.addEventListener('DOMContentLoaded', () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
+    // Initialize global features
+    initCustomCursor();
+    initScrollProgress();
+    initLoadingScreen();
+    initKeyboardNavigation();
+    
     if (currentPage === 'index.html' || currentPage === '') {
         createFloatingHearts();
+        createParticles();
     } else if (currentPage === 'story.html') {
         initStoryAnimations();
     } else if (currentPage === 'distance.html') {
@@ -287,7 +292,168 @@ document.addEventListener('DOMContentLoaded', () => {
             this.style.transition = 'all 0.3s ease';
         });
     });
+    
+    // Disable custom cursor on mobile
+    if (window.innerWidth <= 768) {
+        document.body.style.cursor = 'auto';
+        const cursor = document.getElementById('customCursor');
+        const cursorDot = document.getElementById('customCursorDot');
+        if (cursor) cursor.style.display = 'none';
+        if (cursorDot) cursorDot.style.display = 'none';
+    }
 });
 
 // Smooth scroll behavior
 document.documentElement.style.scrollBehavior = 'smooth';
+
+// Custom Cursor
+function initCustomCursor() {
+    const cursor = document.getElementById('customCursor');
+    const cursorDot = document.getElementById('customCursorDot');
+    
+    if (!cursor || !cursorDot) return;
+    
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Smooth cursor animation
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    
+    // Hover effects
+    const interactiveElements = document.querySelectorAll('button, a, .clickable-icon, .memory-card, .location-dot');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+}
+
+// Scroll Progress Bar
+function initScrollProgress() {
+    const progressBar = document.getElementById('scrollProgress');
+    if (!progressBar) return;
+    
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+}
+
+// Enhanced Page Transition
+function fadeToPage(url) {
+    const transition = document.createElement('div');
+    transition.className = 'page-transition';
+    document.body.appendChild(transition);
+    
+    setTimeout(() => {
+        transition.classList.add('active');
+    }, 10);
+    
+    setTimeout(() => {
+        window.location.href = url;
+    }, 600);
+}
+
+// Loading Screen
+function initLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (!loadingScreen) return;
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                loadingScreen.remove();
+            }, 500);
+        }, 800);
+    });
+}
+
+// Keyboard Navigation
+function initKeyboardNavigation() {
+    document.addEventListener('keydown', (e) => {
+        // Arrow keys for navigation
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            const nextBtn = document.querySelector('.next-btn, .question-btn');
+            if (nextBtn && !e.target.matches('input, textarea')) {
+                nextBtn.click();
+            }
+        }
+        
+        // Escape to close modals/messages
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.secret-message.show, .location-message.show').forEach(el => {
+                el.classList.remove('show');
+            });
+        }
+    });
+}
+
+// Particle Effects for Landing Page
+function createParticles() {
+    const container = document.querySelector('.floating-hearts');
+    if (!container) return;
+    
+    const particleCount = 30;
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 4 + 2}px;
+            height: ${Math.random() * 4 + 2}px;
+            background: var(--pink-medium);
+            border-radius: 50%;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            opacity: ${Math.random() * 0.5 + 0.2};
+            animation: floatParticle ${Math.random() * 20 + 10}s infinite ease-in-out;
+            animation-delay: ${Math.random() * 5}s;
+        `;
+        container.appendChild(particle);
+    }
+    
+    // Add particle animation CSS
+    if (!document.getElementById('particle-style')) {
+        const style = document.createElement('style');
+        style.id = 'particle-style';
+        style.textContent = `
+            @keyframes floatParticle {
+                0%, 100% {
+                    transform: translate(0, 0) rotate(0deg);
+                }
+                25% {
+                    transform: translate(20px, -30px) rotate(90deg);
+                }
+                50% {
+                    transform: translate(-20px, -60px) rotate(180deg);
+                }
+                75% {
+                    transform: translate(30px, -30px) rotate(270deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}

@@ -7,47 +7,80 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="memories-page">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
     <div class="memories-container">
         <h1 class="memories-title fade-in">Little Moments, Big Feelings</h1>
         <p class="memories-subtitle fade-in">Some things I want to remember with you, Ms</p>
         
         <div class="memories-grid">
             <div class="memory-card" data-memory="1">
-                <div class="memory-icon">💬</div>
-                <h3 class="memory-title">Our Conversations</h3>
-                <p class="memory-text">Every message, every laugh, every deep talk... they all matter to me.</p>
+                <div class="memory-icon">🎆</div>
+                <h3 class="memory-title">New Year's Eve</h3>
+                <p class="memory-text">When you turned back and walked up to me. That "why" almost ended me right there 😅</p>
                 <div class="memory-hidden">Click to reveal 💕</div>
             </div>
             
             <div class="memory-card" data-memory="2">
                 <div class="memory-icon">🌙</div>
-                <h3 class="memory-title">Late Night Talks</h3>
-                <p class="memory-text">Those moments when time doesn't matter because we're talking.</p>
+                <h3 class="memory-title">Our Night Walks</h3>
+                <p class="memory-text">Those walks where we just talk and get to know each other. I really enjoy those, Mam.</p>
                 <div class="memory-hidden">Click to reveal 💕</div>
             </div>
             
             <div class="memory-card" data-memory="3">
-                <div class="memory-icon">😊</div>
-                <h3 class="memory-title">Your Smile</h3>
-                <p class="memory-text">Even if I can't always see it, I think about it.</p>
+                <div class="memory-icon">🍔</div>
+                <h3 class="memory-title">Our Mini Date</h3>
+                <p class="memory-text">Borrowed my friend's car, got McDonald's, found that calm spot. Just us chatting in the car.</p>
                 <div class="memory-hidden">Click to reveal 💕</div>
             </div>
             
             <div class="memory-card" data-memory="4">
-                <div class="memory-icon">🎯</div>
-                <h3 class="memory-title">The Future</h3>
-                <p class="memory-text">All the things I want to do with you, places to visit, moments to share.</p>
+                <div class="memory-icon">🍦</div>
+                <h3 class="memory-title">Ice Cream & Walks</h3>
+                <p class="memory-text">Getting ice cream and taking walks together. Simple moments that mean everything.</p>
+                <div class="memory-hidden">Click to reveal 💕</div>
+            </div>
+            
+            <div class="memory-card" data-memory="5">
+                <div class="memory-icon">👀</div>
+                <h3 class="memory-title">You're Beautiful</h3>
+                <p class="memory-text">You draw eyes everywhere you go. Even I can't take my eyes off you, Ms. You're so beautiful.</p>
+                <div class="memory-hidden">Click to reveal 💕</div>
+            </div>
+            
+            <div class="memory-card" data-memory="6">
+                <div class="memory-icon">💪</div>
+                <h3 class="memory-title">Gym Motivation</h3>
+                <p class="memory-text">You're a real catch, Mam. Time to get intimidating cause I need to be ready 😤</p>
                 <div class="memory-hidden">Click to reveal 💕</div>
             </div>
         </div>
         
+        <div class="memories-special fade-in">
+            <div class="special-memory">
+                <h3 class="special-title">Tonight</h3>
+                <p class="special-text">
+                    When you said you have a valentine as a joke and I went on that whole rant 😅<br>
+                    Then I ran to get you that rose...<br>
+                    And broke it by mistake.<br>
+                    But I meant what I said, Ms.<br>
+                    <strong>"I'll make something work"</strong>
+                </p>
+            </div>
+        </div>
+        
         <div class="memories-message fade-in">
-            <p>These are just the beginning, Mam. There's so much more I want to experience with you.</p>
+            <p>These are just the beginning, Mam. There's so much more I want to experience with you. (And I'm not going anywhere 😎)</p>
         </div>
         
         <div class="memories-nav">
-            <button class="next-btn" onclick="fadeToPage('question.html')">
-                <span>One question... →</span>
+            <button class="next-btn playful-btn" onclick="fadeToPage('question.html')">
+                <span>Okay okay, one question... →</span>
             </button>
         </div>
     </div>

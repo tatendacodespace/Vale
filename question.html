@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="question-page">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
     <div class="question-container">
         <div class="question-content">
             <h1 class="main-question fade-in-slow">
@@ -14,11 +20,11 @@
             </h1>
             
             <div class="button-group fade-in-slow">
-                <button class="answer-btn yes-btn" onclick="handleAnswer(true)">
-                    <span>Yes 💕</span>
+                <button class="answer-btn yes-btn playful-btn" onclick="handleAnswer(true)">
+                    <span>Yes 💕 (obviously)</span>
                 </button>
                 <button class="answer-btn no-btn" onclick="handleAnswer(false)">
-                    <span>No</span>
+                    <span>No (try again 😏)</span>
                 </button>
             </div>
         </div>
@@ -31,8 +37,8 @@
         </div>
         
         <div class="final-cta" id="finalCta" style="display: none;">
-            <button class="next-btn" onclick="fadeToPage('thankyou.html')">
-                <span>One more thing... →</span>
+            <button class="next-btn playful-btn" onclick="fadeToPage('thankyou.html')">
+                <span>Wait wait, one more thing... →</span>
             </button>
         </div>
     </div>

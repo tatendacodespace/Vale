@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="story-page">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
     <div class="story-container">
         <section class="story-section" data-section="1">
             <div class="story-content">
                 <div class="story-icon clickable-icon" onclick="revealMessage(1)">🌼</div>
                 <h2 class="story-title">I ran and picked that flower</h2>
-                <p class="story-text">Because I wanted to give you something beautiful, Mam.</p>
+                <p class="story-text">Because I wanted to give you something beautiful, Mam. (and I was panicking lowkey 😅)</p>
                 <div class="hidden-message" id="message1">
-                    <p>💕 I'd run anywhere for you, Ms. 💕</p>
+                    <p>💕 I'd run anywhere for you, Ms. Even if I look crazy doing it 😂💕</p>
                 </div>
             </div>
         </section>
@@ -23,14 +29,14 @@
             <div class="story-content">
                 <div class="story-icon broken-icon clickable-icon" onclick="revealMessage(2)">💔</div>
                 <h2 class="story-title">Then I broke it...</h2>
-                <p class="story-text">By mistake. Oops 😅</p>
+                <p class="story-text">By mistake. Classic me move 😅💀</p>
                 <div class="broken-pieces">
                     <span class="piece">🌿</span>
                     <span class="piece">🌿</span>
                     <span class="piece">🌿</span>
                 </div>
                 <div class="hidden-message" id="message2">
-                    <p>💕 But I'll always try again for you. 💕</p>
+                    <p>💕 But I'll always try again for you. I'm persistent like that 😤💕</p>
                 </div>
             </div>
         </section>
@@ -39,22 +45,22 @@
             <div class="story-content">
                 <div class="story-icon healing-icon clickable-icon" onclick="revealMessage(3)">💐</div>
                 <h2 class="story-title">But I keep saying</h2>
-                <p class="story-text">"I'll make something work"</p>
+                <p class="story-text">"I'll make something work" (it's my catchphrase at this point 😂)</p>
                 <div class="healing-animation">
                     <span class="sparkle">✨</span>
                     <span class="sparkle">✨</span>
                     <span class="sparkle">✨</span>
                 </div>
-                <p class="story-text final-text">And I mean it, Ms. Even when things don't go perfectly.</p>
+                <p class="story-text final-text">And I mean it, Ms. Even when I'm being clumsy and breaking things 😅</p>
                 <div class="hidden-message" id="message3">
-                    <p>💕 Because you're worth every effort, Mam. 💕</p>
+                    <p>💕 Because you're worth every effort, Mam. Even my failed attempts 😂💕</p>
                 </div>
             </div>
         </section>
 
         <div class="story-nav">
-            <button class="next-btn" onclick="fadeToPage('distance.html')">
-                <span>Continue →</span>
+            <button class="next-btn playful-btn" onclick="fadeToPage('distance.html')">
+                <span>Keep going →</span>
             </button>
         </div>
     </div>
