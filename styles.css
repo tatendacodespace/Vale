@@ -720,7 +720,9 @@ html {
 
 /* Question Page */
 .question-page {
-    background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 50%, var(--peach) 100%);
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 50%, var(--peach) 100%),
+                radial-gradient(circle at 20% 50%, rgba(255, 158, 197, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(232, 213, 255, 0.1) 0%, transparent 50%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -738,9 +740,17 @@ html {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 300;
     color: var(--text-dark);
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     line-height: 1.3;
     animation: gentlePulse 3s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
 .fade-in-slow {
@@ -1261,6 +1271,14 @@ html {
     .answer-btn {
         width: 100%;
         max-width: 250px;
+    }
+
+    .question-page {
+        padding: 1rem;
+    }
+
+    .subtitle {
+        margin-bottom: 2rem;
     }
 
     .footer-note {
