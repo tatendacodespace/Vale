@@ -157,8 +157,8 @@ function handleAnswer(isYes) {
                     Yay! Let's gooo! 💕💕💕
                 </p>
                 <p class="closing-text fade-in" style="margin-top: 2rem;">
-                    Even if you're far...<br>
-                    I'd still choose you, Mam. (No cap 😎)
+                    If you had a Twin...<br>
+                    I'd still choose you, Mam.
                 </p>
             `;
         }
