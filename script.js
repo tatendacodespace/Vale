@@ -154,11 +154,11 @@ function handleAnswer(isYes) {
         if (closingMessage) {
             closingMessage.innerHTML = `
                 <p class="closing-text fade-in" style="font-size: 2rem; color: var(--pink-dark); font-weight: 600;">
-                    Yay! Let's gooo! 💕💕💕
+                    Type Shiii 💕💕💕
                 </p>
                 <p class="closing-text fade-in" style="margin-top: 2rem;">
                     If you had a Twin...<br>
-                    I'd still choose you, Mam.
+                    I'd still choose you, or whatever drake said.
                 </p>
             `;
         }
@@ -178,7 +178,7 @@ function handleAnswer(isYes) {
             noBtn.style.opacity = '0';
             setTimeout(() => {
                 if (noBtn) {
-                    noBtn.innerHTML = '<span>Nice try 😏 Click me again</span>';
+                    noBtn.innerHTML = '<span>Lol, there is only one right answer😏</span>';
                     noBtn.style.transform = 'translateX(0) rotate(0deg)';
                     noBtn.style.opacity = '1';
                     noBtn.onclick = () => handleAnswer(true);
@@ -281,6 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initDistanceAnimations();
     } else if (currentPage === 'memories.html') {
         initMemoriesPage();
+    } else if (currentPage === 'question.html') {
+        createFloatingHearts();
     } else if (currentPage === 'thankyou.html') {
         initThankYouPage();
     }
